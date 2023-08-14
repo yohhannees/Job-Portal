@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.bbody {
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(#292929, #0e0d0d);
+	font-family: "Titillium Web", sans-serif;
+	position: relative;
+
+	/* 	--pink: #ea4c89; */
+	--white: #ebebeb;
+	--pink: #be7311;
+}
+
+.hheader {
+	position: absolute;
+	width: 1000px;
+	left: 50%;
+	top: 5%;
+	transform: translateX(-50%);
+	padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 100px 100px 100px;
+	align-items: center;
+	z-index: 7;
+	color: var(--white);
+}
+.hheader h3 {
+	font-size: 1.2rem;
+	color: var(--pink);
+	letter-spacing: 1px;
+}
+.hheader p {
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	transition: 0.3s;
+}
+.hheader p:hover {
+	color: var(--pink);
+	cursor: pointer;
+}
+
+.ccontainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 1000px;
+	height: 80%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 10px;
+	perspective: 1000px;
+}
+
+.layer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 1000px;
+	height: 80%;
+	padding: 1em;
+	position: relative;
+	z-index: 5;
+	clip-path: polygon(3% 0, 40% 0%, 40% 100%, 0% 100%);
+}
+.layer h1 {
+	position: absolute;
+	top: 50%;
+	left: -270px;
+	transform: translate(0, -50%);
+	font-size: 5rem;
+	font-weight: 900;
+	color: var(--white);
+	text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.3);
+	letter-spacing: 5px;
+}
+.layer h1 span {
+	color: var(--pink);
+}
+
+.cta {
+	position: absolute;
+	top: 70%;
+	left: 140px;
+	transform: translate(-360px, -70%);
+	width: 150px;
+	height: 50px;
+	padding: 0.5em;
+	border: 2px solid var(--white);
+	color: var(--white);
+	display: grid;
+	grid-template-columns: 1fr 30px;
+	align-items: center;
+	transition: background-color 0.3s;
+}
+.cta:hover {
+	cursor: pointer;
+	color: var(--pink);
+	background-color: var(--white);
+}
+.cta:hover > svg {
+	stroke: var(--pink);
+	stroke-width: 2;
+}
+.cta p {
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.cta svg {
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: var(--white);
+}
+
+.ppanel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transform-origin: 50% 0;
+	transform: translateZ(0) translateX(0) rotateY(0deg);
+	position: relative;
+}
+.ppanel::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+}
+
+.front,
+.back {
+	width: 100%;
+	height: 100%;
+	background-image: url("https://www.sicontis.com/codepen/cpc-reflection/gdtography.jpg");
+	background-size: cover;
+	background-position: left top;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.back {
+	transform: scaleX(-1) rotateY(180deg);
+}
+
+.ppanel:nth-child(1) .front {
+	background-position: 0 0;
+}
+.ppanel:nth-child(2) .front {
+	background-position: -250px 0;
+}
+.ppanel:nth-child(3) .front {
+	background-position: -500px 0;
+}
+.ppanel:nth-child(4) .front {
+	background-position: -750px 0;
+}
+
+.ppanel:nth-child(1) .back {
+	background-position: 250px 0;
+}
+.panel:nth-child(2) .back {
+	background-position: 500px 0;
+}
+.ppanel:nth-child(3) .back {
+	background-position: 750px 0;
+}
+.ppanel:nth-child(4) .back {
+	background-position: 1000px 0;
+}
+
+.ffooter {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 5%;
+	padding: 10px;
+	display: grid;
+	place-items: center;
+	z-index: 6;
+}
+.ffooter p {
+	font-size: 0.8rem;
+	color: #979797;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.ffooter a {
+	color: var(--pink);
+	text-decoration: none;
+}
+
+.replay {
+	cursor: pointer;
+	width: min-content;
+	font-size: 0.8rem;
+	color: var(--white);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 5px;
+	transform: translateY(-20px);
+}

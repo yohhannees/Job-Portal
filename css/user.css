@@ -1,0 +1,29 @@
+section {
+    padding: 2rem 10%;
+  }
+  .services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1rem;
+  }
+  
+  .services .box-container .box {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--main-color);
+    cursor: pointer;
+  }
+  
+  .services .box-container .box:hover {
+    background-color: var(--black);
+  }
+  
+  .services .box-container .box img {
+    height: 100px;
+  }
+  
+  .services .box-container .box h3 {
+    color: var(--white);
+    font-size: 1.7rem;
+    padding-top: 10px;
+  }
